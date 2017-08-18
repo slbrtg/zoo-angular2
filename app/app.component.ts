@@ -7,6 +7,7 @@ import { Animal } from './animal.model';
   <h1>Angular Zoo</h1>
   <br>
   <animal-list [childAnimalList]="masterAnimalList"></animal-list>
+  <new-animal (newAnimalSender)="saveAnimal($event)"></new-animal>
   `
 })
 
@@ -16,4 +17,8 @@ export class AppComponent {
 
     new Animal("Doggo", "good boi", 2, "treats", "internet", 1, "boy", "food, pettings", "Cold, Naked Depression")
   ]
+
+  saveAnimal(newAnimalFromChild: Animal){
+    this.masterAnimalList.push(newAnimalFromChild);
+  }
 }
