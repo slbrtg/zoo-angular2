@@ -16,7 +16,8 @@ export class AppComponent {
   masterAnimalList: Animal[] = [
     // constructor(public species: string, public name: string, public age: number, public diet: string, public zooLocation: string, public numOfCaretakers: number, public sex: string, public likes: string, public dislikes: string)
 
-    new Animal("Doggo", "good boi", 2, "treats", "internet", 1, "boy", "food, pettings", "Cold, Naked Depression")
+    new Animal("Doggo", "good boi", 2, "treats", "internet", 1, "boy", "food, pettings", "Cold, Naked Depression"),
+    new Animal("Doggo2", "good boi", 0, "treats", "internet", 1, "boy", "food, pettings", "Cold, Naked Depression")
   ]
   selectedAnimal = null;
 
