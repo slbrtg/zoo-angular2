@@ -6,7 +6,7 @@ import { Animal } from './animal.model';
   template: `
   <h1>Angular Zoo</h1>
   <br>
-  <animal-list [childAnimalList]="masterAnimalList"></animal-list>
+  <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
   <edit-animal [childSelectedAnimal]="selectedAnimal"(doneButtonClickedSender)="finishedEditing()"></edit-animal>
   <new-animal (newAnimalSender)="saveAnimal($event)"></new-animal>
   `
@@ -22,6 +22,10 @@ export class AppComponent {
 
   saveAnimal(newAnimalFromChild: Animal){
     this.masterAnimalList.push(newAnimalFromChild);
+  }
+
+  editAnimal(clickedAnimal){
+    this.selectedAnimal = clickedAnimal;
   }
 
   finishedEditing(){

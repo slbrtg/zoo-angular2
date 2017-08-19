@@ -30,6 +30,7 @@ export class AnimalListComponent{
   @Output() clickSender = new EventEmitter();
 
   editButtonHasBeenClicked(animalToEdit: Animal){
+    console.log(animalToEdit);
     this.clickSender.emit(animalToEdit);
   }
 
